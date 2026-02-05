@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.source_files = "ios/**/*.{h,m,mm,swift,cpp}"
   s.frameworks   = "CoreBluetooth"
   s.swift_version = "5.0"
+  s.ios.deployment_target = '15.1'
 
   install_modules_dependencies(s)
 end
