@@ -1,12 +1,29 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-ble-peripheral';
-
-const result = multiply(3, 7);
+import { Text, View, StyleSheet, Button } from 'react-native';
+import BlePeripheral from 'react-native-ble-peripheral';
 
 export default function App() {
+  const startAd = async () => {
+    try {
+      await BlePeripheral.addCharacteristic({
+        serviceUUID: '12345678-1234-5678-1234-56789abcdef0',
+        characteristicUUID: '12345678-1234-5678-1234-56789abcdef1',
+        properties: ['read', 'write', 'notify'],
+        permissions: ['readable', 'writeable'],
+      });
+      await BlePeripheral.startAdvertising(
+        '12345678-1234-5678-1234-56789abcdef0',
+        'BleExample'
+      );
+      console.log('Advertising started');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>BLE Peripheral Example</Text>
+      <Button title="Start Advertising" onPress={startAd} />
     </View>
   );
 }
