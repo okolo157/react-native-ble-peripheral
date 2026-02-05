@@ -1,6 +1,6 @@
 {
   "name": "@vic1v1/react-native-ble-peripheral",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "a custom peripheral discovery package for react native",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
