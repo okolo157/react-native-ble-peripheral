@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: 'https://registry.npmjs.org/'
           cache: 'yarn'
           cache-dependency-path: yarn.lock
 
@@ -31,6 +30,3 @@ jobs:
 
       - name: Publish to NPM
         run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # If using OIDC, the token is not needed, but we keep it for now
