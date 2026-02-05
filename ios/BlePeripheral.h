@@ -1,5 +1,1 @@
-#import <BlePeripheralSpec/BlePeripheralSpec.h>
-
-@interface BlePeripheral : NSObject <NativeBlePeripheralSpec>
-
-@end
+// This file is empty to avoid redefinition conflicts with the Swift class and RCT_EXTERN_MODULE

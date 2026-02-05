@@ -23,9 +23,4 @@ RCT_EXTERN_METHOD(updateCharacteristicValue:(NSString *)characteristicUUID
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject)
 
-+ (BOOL)requiresMainQueueSetup
-{
-    return YES;
-}
-
 @end
